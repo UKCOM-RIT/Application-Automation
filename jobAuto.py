@@ -4,9 +4,10 @@ from selenium import webdriver
 ##from selenium.common.exceptions import TimeoutException
 import time
 import math
+import os
 from math import ceil
 
-path = "Desktop/pythonTest/"
+path = "/pythonTest/"
 
 driver = webdriver.Safari()
 
@@ -48,15 +49,15 @@ def loadPage():
             linksList.append(tempList[link].get_attribute('innerHTML'))
     print("end of loadPage()")
     nameArray = createNameArray(linksList)
-    for name in nameList:
-        createFolder(path + nameArray[name])
+    for i in range(len(nameArray)):
+        tempPath = path + nameArray[i]
+        createFolder(tempPath)
     return
         
 ##    print(linksList[0].get_attribute('innerHTML'))
 
 def createNameArray(nameArray):
     #Rename all elements of name list to be last_first
-    print("Inside Name array")
     for name in range (len(nameArray)):
         nameArray[name] = nameArray[name].replace(", ", "_")
         print(nameArray[name])
@@ -67,6 +68,7 @@ def createFolder(directory):
     try:
         if not os.path.exists(directory):
             os.makedirs(directory)
+            #mkdir = single cell dir, makedirs = mutiple level 
     except OSERROR:
             print ('Error: Creating directory. ' + directory)
     return

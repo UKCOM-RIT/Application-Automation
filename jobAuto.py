@@ -128,10 +128,10 @@ driver = webdriver.Safari()
 ospath  = os.path.expanduser('~')
 directory =  ospath + '/Desktop/pythonTest/'
 
-Page  = Webscraper('https://ukjobs.uky.edu/hr/login', '', '', directory, None, None)
+Page  = Webscraper('https://ukjobs.uky.edu/hr/login', 'gu922972', 'lecturer19', directory, None, None)
 Page.loadPage()
 
-driver.quit()
+##driver.quit()
 #Closes ALL open browser tabs
 
 #createNameArray(linksList)

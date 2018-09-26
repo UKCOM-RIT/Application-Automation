@@ -11,7 +11,11 @@ For questions contact bryan_racic@uky.edu
 - Python 3.6
 - **Browser Specific Webdriver**
   - *(see getting started for more details)*
-
+-wget module
+  - *mac:* download at *https://pypi.org/project/wget/#files* & unzip
+   ```
+   cd /Downloads/wget-3.2 | python3 setup.py build | python3 setup.py install 
+   ```
 ## Getting started
 
 Selenium requires a driver to interface with your browser of choice. 
